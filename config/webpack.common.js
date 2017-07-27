@@ -6,7 +6,6 @@ var helpers = require('./helpers');
 module.exports = {
   entry: {
     'polyfills': './src/polyfills.ts',
-    'vendor': './src/vendor.ts',
     'app': './src/main.ts'
   },
 
@@ -16,15 +15,6 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        test: /\.ts$/,
-        loaders: [
-          {
-            loader: 'awesome-typescript-loader',
-            options: { configFileName: helpers.root('src', 'tsconfig.json') }
-          } , 'angular2-template-loader'
-        ]
-      },
       {
         test: /\.html$/,
         loader: 'html-loader'
@@ -56,7 +46,7 @@ module.exports = {
     ),
 
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills']
+      name: ['app', 'polyfills']
     }),
 
     new HtmlWebpackPlugin({

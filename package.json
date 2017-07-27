@@ -40,6 +40,8 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
+    "@angular/compiler-cli": "~4.0.0",
+    "@ngtools/webpack": "1.5.4",
     "concurrently": "^3.2.0",
     "lite-server": "^2.2.2",
     "typescript": "2.3.4",
